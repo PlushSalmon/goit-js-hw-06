@@ -12,3 +12,13 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const makeLi = ({ url, alt } = image) => {
+  return `<li><img style='width:300px' src= ${url} alt=${alt} ></li>`;
+};
+
+const makeList = images.map(makeLi).join("");
+
+const list = document.querySelector("ul");
+list.insertAdjacentHTML("beforeend", makeList);
+list.style.display = 'flex'
